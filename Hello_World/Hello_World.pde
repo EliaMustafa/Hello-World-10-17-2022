@@ -19,8 +19,6 @@ if ( appHeight > displayHeight ) appHeight=0; //CANVAS-width will not fit
 if ( appWidth==0 || appHeight==0 ) println("STOP, is broken"); //OR
 if ( appWidth!=0 && appHeight!=0 ) println("Display: Good to Go"); //AND
 //
-square(130, 150, 230);
-//
 String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
 String orientation = ( appWidth >= appHeight ) ? ls : p ;
 println(DO, orientation);
