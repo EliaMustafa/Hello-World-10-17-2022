@@ -1,48 +1,46 @@
-//Global Variables
-int appWidth, appHeight;
-float centerX, centerY, xStart, yStart, widthRect, heightRect;
-//
-void setup() {
-  //Declaring Display Geometry: landscape, square, portrait
-  size(700, 400); //Able to deploy with fullScreen();
-  //fullScreen();
-  appWidth = width;
-  appHeight = height;
-  //Concatenation: , or + (i.e space)
-  println("\t\t\tWidth="+width, "\tHeight="+height);
-  println("Display Monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
-  //
-  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
-  //
-  if ( appWidth < appHeight ) { //Declaring Landscape & square
-    println(instruct);
-  } else {
-    println("Display: Good to Go");
-    if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
-      appWidth=0;
-      appHeight=0;
-      println("STOP, is broken");
-    } else {
-      //Empty ELSE
-    }
-  }
-  //Population
-  centerX = width * 1/2;
-  centerY = height * 1/2;
-  xStart = centerX - ( width * 1/4 );
-  yStart  = centerY - ( height * 1/4 );
-  widthRect = width * 1/2;
-  heightRect = height * 1/2;
-} //End setup
-//
-void draw() {
-  rect(xStart, yStart, widthRect, heightRect);
-} //End draw
-//
-void keyPressed() {
-} //End keyPressed
-//
-void mousePressed() {
-} //End mousePressed
-//
-// End Main Program
+void setup () {
+  // frame
+size(300,300);
+
+}
+
+void draw () {  
+background(255);
+rectMode(CENTER);
+  
+// body
+stroke(0);
+fill(250);
+ellipse(150,160,100,100);
+
+// head
+fill(250);
+ellipse(150,100,60,60);
+
+// eyes
+fill(0);
+ellipse(142,92,5,5);
+ellipse(158,92,5,5);
+
+// nose
+fill(255,200,0);
+ellipse(150,102,7,7);
+
+// arms
+stroke(0);
+line(200,150,210,130);
+line(100,150,90,130);
+
+// smile
+fill(255);
+stroke(0);
+arc(150, 106, 30, 25, -TWO_PI, -PI);
+
+// hat
+fill(mouseX,0,mouseY);
+rect(150,55,34,40);
+line(125,75,175,75);
+
+println("Let it Snow!");
+
+}
